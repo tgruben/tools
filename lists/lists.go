@@ -210,3 +210,13 @@ func SelectI[T, K comparable](list []T, f func(T) bool) []int {
 	}
 	return result
 }
+
+func Push[T any](list []T,item T)[]T {
+	return append(list,item)
+}
+
+func Pop[T any](list []T)(T,[]T) {
+	item := list[len(list)-1]
+	list = list[:len(list)-1]
+	return item,list
+}
